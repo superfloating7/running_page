@@ -305,6 +305,9 @@ const getActivitySport = (act: Activity): string => {
   else if (act.type.includes('skiing')) {
     return ACTIVITY_TYPES.SKIING_TITLE;
   }
+  else if (act.type.includes('tennis')) {
+    return ACTIVITY_TYPES.TENNIS_TITLE;
+  }
   return '';
 };
 
