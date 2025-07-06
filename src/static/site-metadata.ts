@@ -17,7 +17,8 @@ const getBasePath = () => {
 const data: ISiteMetadataResult = {
   siteTitle: 'Hannah\'s Running Page',
   siteUrl: '',
-  logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTtc69JxHNcmN1ETpMUX4dozAgAN6iPjWalQ&usqp=CAU',
+  // logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTtc69JxHNcmN1ETpMUX4dozAgAN6iPjWalQ&usqp=CAU',
+  logo: 'https://raw.githubusercontent.com/superfloating7/running_page/refs/heads/master/public/images/photo.jpg',
   description: 'Personal site and blog',
   navLinks: [
     // {
