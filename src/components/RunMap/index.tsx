@@ -1,4 +1,3 @@
-import MapboxLanguage from '@mapbox/mapbox-gl-language';
 import React, { useRef, useCallback, useState, useEffect } from 'react';
 import Map, {
   Layer,
@@ -12,6 +11,9 @@ import useActivities from '@/hooks/useActivities';
 import {
   IS_CHINESE,
   ROAD_LABEL_DISPLAY,
+  MAP_TILE_VENDOR,
+  MAP_TILE_STYLE,
+  MAP_TILE_ACCESS_TOKEN,
   MAPBOX_TOKEN,
   PROVINCE_FILL_COLOR,
   COUNTRY_FILL_COLOR,
@@ -20,9 +22,6 @@ import {
   MAP_HEIGHT,
   PRIVACY_MODE,
   LIGHTS_ON,
-  MAP_TILE_STYLE,
-  MAP_TILE_VENDOR,
-  MAP_TILE_ACCESS_TOKEN,
 } from '@/utils/const';
 import {
   Coordinate,
@@ -79,9 +78,8 @@ const RunMap = ({
     (ref: MapRef) => {
       if (ref !== null) {
         const map = ref.getMap();
-        if (map && IS_CHINESE) {
-          map.addControl(new MapboxLanguage({ defaultLanguage: 'zh-Hans' }));
-        }
+        // MapboxLanguage is only for Mapbox styles and is currently not needed for MapTiler / StadiaMaps.
+        // This avoids MapboxLanguage style-version checks and Mapbox token validation when using non-Mapbox providers.
         // all style resources have been downloaded
         // and the first visually complete rendering of the base style has occurred.
         // it's odd. when use style other than mapbox, the style.load event is not triggered.Add commentMore actions
@@ -182,7 +180,7 @@ const RunMap = ({
       mapStyle={mapStyle}
       ref={mapRefCallback}
       cooperativeGestures={isTouchDevice()}
-      mapboxAccessToken={MAPBOX_TOKEN}
+      mapboxAccessToken={MAP_TILE_VENDOR === 'mapbox' ? MAPBOX_TOKEN : undefined}
     >
       <RunMapButtons changeYear={changeYear} thisYear={thisYear} />
       <Source id="data" type="geojson" data={geoData}>
