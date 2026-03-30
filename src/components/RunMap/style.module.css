@@ -1,3 +1,4 @@
+/* Apple system font style for primary poster/controls */
 .locationSVG {
   height: 100%;
   width: 100%;
@@ -12,6 +13,7 @@
   left: 10px;
   margin: 0 auto;
   padding-right: 70px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 .button {
@@ -23,10 +25,13 @@
   font-size: 1rem;
   text-align: center;
   color: rgb(204, 204, 204);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
 }
 
 .selected {
   color: rgb(224, 237, 94);
+  font-weight: 800;
 }
 
 .runTitle {
@@ -37,6 +42,10 @@
   left: 120px;
   cursor: pointer;
   color: rgb(224, 237, 94);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
 }
 
 .lights {
