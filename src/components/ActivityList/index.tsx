@@ -16,7 +16,7 @@ import { totalStat } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
 import { SHOW_ELEVATION_GAIN } from '@/utils/const';
 
-const MonthofLifeSvg = lazy(() => loadSvgComponent(totalStat, 'assets/mol.svg'));
+const MonthofLifeSvg = lazy(() => loadSvgComponent(totalStat, './mol.svg'));
 
 // Define interfaces for our data structures
 interface Activity {

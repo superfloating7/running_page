@@ -18,7 +18,7 @@ const YearStat = ({
   // for hover
   const [hovered, eventHandlers] = useHover();
   // lazy Component
-  const YearSVG = lazy(() => loadSvgComponent(yearStats, `assets/year_${year}.svg`));
+  const YearSVG = lazy(() => loadSvgComponent(yearStats, `./year_${year}.svg`));
 
   if (years.includes(year)) {
     runs = runs.filter((run) => run.start_date_local.slice(0, 4) === year);
