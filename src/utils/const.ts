@@ -1,7 +1,7 @@
 // const
-const MAPBOX_TOKEN =
-  // We are now using MapTiler map style. Mapbox token can be left as empty.
-  '';
+// We still use mapbox-gl under the hood (react-map-gl), which requires an access token.
+// For MapTiler / StadiaMaps vendor we can use MapTiler token here.
+const MAPBOX_TOKEN = 'Gt5R0jT8tuIYxW6sNrAg';
 const MUNICIPALITY_CITIES_ARR = [
   '北京市',
   '上海市',

@@ -180,7 +180,7 @@ const RunMap = ({
       mapStyle={mapStyle}
       ref={mapRefCallback}
       cooperativeGestures={isTouchDevice()}
-      mapboxAccessToken={MAP_TILE_VENDOR === 'mapbox' ? MAPBOX_TOKEN : undefined}
+      mapboxAccessToken={MAP_TILE_VENDOR === 'mapbox' ? MAPBOX_TOKEN : MAP_TILE_ACCESS_TOKEN}
     >
       <RunMapButtons changeYear={changeYear} thisYear={thisYear} />
       <Source id="data" type="geojson" data={geoData}>
