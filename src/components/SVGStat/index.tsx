@@ -3,9 +3,9 @@ import { totalStat } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
 
 // Lazy load both github.svg and grid.svg
-const GithubSvg = lazy(() => loadSvgComponent(totalStat, './github.svg'));
+const GithubSvg = lazy(() => loadSvgComponent(totalStat, 'assets/github.svg'));
 
-const GridSvg = lazy(() => loadSvgComponent(totalStat, './grid.svg'));
+const GridSvg = lazy(() => loadSvgComponent(totalStat, 'assets/grid.svg'));
 
 const SVGStat = () => (
   <div id="svgStat">
