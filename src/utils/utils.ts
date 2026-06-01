@@ -216,8 +216,7 @@ const getActivitySport = (act: Activity): string => {
   // if act.type contains 'skiing'
   else if (act.type.includes('skiing')) {
     return ACTIVITY_TYPES.SKIING_TITLE;
-  }
-  else if (act.type.includes('tennis')) {
+  } else if (act.type.includes('tennis')) {
     return ACTIVITY_TYPES.TENNIS_TITLE;
   }
   return '';
@@ -260,7 +259,12 @@ const titleForRun = (run: Activity): string => {
   return RUN_TITLES.NIGHT_RUN_TITLE;
 };
 
-const RUNNING_TYPES = new Set(['Run', 'track_running', 'trail_running', 'treadmill_running']);
+const RUNNING_TYPES = new Set([
+  'Run',
+  'track_running',
+  'trail_running',
+  'treadmill_running',
+]);
 
 const isRunningActivity = (run: Activity) => RUNNING_TYPES.has(run.type);
 

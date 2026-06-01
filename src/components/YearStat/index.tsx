@@ -67,7 +67,8 @@ const addRunToAccumulator = (
 
     if (run.average_speed) {
       accumulator.totalMetersForPace += run.distance || 0;
-      accumulator.totalSecondsForPace += (run.distance || 0) / run.average_speed;
+      accumulator.totalSecondsForPace +=
+        (run.distance || 0) / run.average_speed;
     }
 
     if (run.average_heartrate) {

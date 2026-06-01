@@ -23,15 +23,8 @@ import {
   PRIVACY_MODE,
   LIGHTS_ON,
 } from '@/utils/const';
-import {
-  Coordinate,
-  IViewState,
-} from '@/utils/utils';
-import {
-  geoJsonForMap,
-  getMapStyle,
-  isTouchDevice,
-} from '@/utils/geoUtils';
+import { Coordinate, IViewState } from '@/utils/utils';
+import { geoJsonForMap, getMapStyle, isTouchDevice } from '@/utils/geoUtils';
 import RunMarker from './RunMarker';
 import RunMapButtons from './RunMapButtons';
 import styles from './style.module.css';
@@ -182,7 +175,9 @@ const RunMap = ({
       mapStyle={mapStyle}
       ref={mapRefCallback}
       cooperativeGestures={isTouchDevice()}
-      mapboxAccessToken={MAP_TILE_VENDOR === 'mapbox' ? MAPBOX_TOKEN : MAP_TILE_ACCESS_TOKEN}
+      mapboxAccessToken={
+        MAP_TILE_VENDOR === 'mapbox' ? MAPBOX_TOKEN : MAP_TILE_ACCESS_TOKEN
+      }
     >
       <RunMapButtons changeYear={changeYear} thisYear={thisYear} />
       <Source id="data" type="geojson" data={geoData}>

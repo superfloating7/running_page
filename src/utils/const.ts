@@ -101,7 +101,7 @@ const ACTIVITY_TYPES = {
   CYCLING_TITLE,
   SKIING_TITLE,
   WALKING_TITLE,
-  TENNIS_TITLE
+  TENNIS_TITLE,
 };
 
 const RUN_TITLES = {
@@ -172,12 +172,18 @@ export const INDOOR_COLOR = 'rgb(255,200,100)';
 
 export const getRuntimeRunColor = (type: string): string => {
   switch (type) {
-    case 'cycling': return CYCLING_COLOR;
-    case 'hiking': return HIKING_COLOR;
-    case 'walking': return WALKING_COLOR;
-    case 'swimming': return SWIMMING_COLOR;
-    case 'indoor': return INDOOR_COLOR;
-    default: return MAIN_COLOR;
+    case 'cycling':
+      return CYCLING_COLOR;
+    case 'hiking':
+      return HIKING_COLOR;
+    case 'walking':
+      return WALKING_COLOR;
+    case 'swimming':
+      return SWIMMING_COLOR;
+    case 'indoor':
+      return INDOOR_COLOR;
+    default:
+      return MAIN_COLOR;
   }
 };
 
@@ -224,7 +230,9 @@ export const MAP_TILE_STYLES = {
 };
 
 export const getMapTileVendorStyles = (vendor: string) => {
-  return MAP_TILE_STYLES[vendor as keyof typeof MAP_TILE_STYLES] as Record<string, string> | undefined;
+  return MAP_TILE_STYLES[vendor as keyof typeof MAP_TILE_STYLES] as
+    | Record<string, string>
+    | undefined;
 };
 
 export const MAP_TILE_STYLE_DARK = MAP_TILE_STYLE;
@@ -233,4 +241,6 @@ export const MAP_TILE_STYLE_LIGHT = MAP_TILE_STYLE;
 export const HOME_PAGE_TITLE = IS_CHINESE ? '我的跑步主页' : 'Running Page';
 export const LOADING_TEXT = IS_CHINESE ? '加载中...' : 'Loading...';
 export const NO_ROUTE_DATA = IS_CHINESE ? '暂无路线数据' : 'No route data';
-export const INVALID_ROUTE_DATA = IS_CHINESE ? '路线数据无效' : 'Invalid route data';
+export const INVALID_ROUTE_DATA = IS_CHINESE
+  ? '路线数据无效'
+  : 'Invalid route data';
