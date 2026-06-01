@@ -11,8 +11,8 @@ import Map, {
   FullscreenControl,
   NavigationControl,
   MapRef,
-} from 'react-map-gl/maplibre';
-import type { MapInstance } from 'react-map-gl/maplibre';
+} from 'react-map-gl/mapbox';
+import type { MapInstance } from 'react-map-gl/mapbox';
 import useActivities from '@/hooks/useActivities';
 import {
   IS_CHINESE,
