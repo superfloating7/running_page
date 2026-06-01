@@ -162,29 +162,43 @@ export const MAIN_COLOR = nike;
 export const PROVINCE_FILL_COLOR = '#47b8e0';
 export const COUNTRY_FILL_COLOR = dark_vanilla;
 
+// Static color constants
+export const RUN_COLOR_LIGHT = '#47b8e0';
+export const RUN_COLOR_DARK = MAIN_COLOR;
+
+// Single run animation colors
+export const SINGLE_RUN_COLOR_LIGHT = '#52c41a';
+export const SINGLE_RUN_COLOR_DARK = '#ff4d4f';
+
+// Legacy export
 export const RUN_COLOR = MAIN_COLOR;
 export const RUN_TRAIL_COLOR = 'rgb(255,153,51)';
 export const CYCLING_COLOR = 'rgb(51,255,87)';
 export const HIKING_COLOR = 'rgb(151,51,255)';
 export const WALKING_COLOR = HIKING_COLOR;
 export const SWIMMING_COLOR = 'rgb(255,51,51)';
-export const INDOOR_COLOR = 'rgb(255,200,100)';
+export const INDOOR_COLOR = '#8899aa';
 
-export const getRuntimeRunColor = (type: string): string => {
-  switch (type) {
-    case 'cycling':
-      return CYCLING_COLOR;
-    case 'hiking':
-      return HIKING_COLOR;
-    case 'walking':
-      return WALKING_COLOR;
-    case 'swimming':
-      return SWIMMING_COLOR;
-    case 'indoor':
-      return INDOOR_COLOR;
-    default:
-      return MAIN_COLOR;
-  }
+export const getRuntimeRunColor = (): string => {
+  if (typeof window === 'undefined') return RUN_COLOR_DARK;
+  const dataTheme = document.documentElement.getAttribute('data-theme');
+  const savedTheme = localStorage.getItem('theme');
+  const isDark =
+    dataTheme === 'dark' ||
+    (!dataTheme && savedTheme === 'dark') ||
+    (!dataTheme && !savedTheme);
+  return isDark ? RUN_COLOR_DARK : RUN_COLOR_LIGHT;
+};
+
+export const getRuntimeSingleRunColor = (): string => {
+  if (typeof window === 'undefined') return SINGLE_RUN_COLOR_DARK;
+  const dataTheme = document.documentElement.getAttribute('data-theme');
+  const savedTheme = localStorage.getItem('theme');
+  const isDark =
+    dataTheme === 'dark' ||
+    (!dataTheme && savedTheme === 'dark') ||
+    (!dataTheme && !savedTheme);
+  return isDark ? SINGLE_RUN_COLOR_DARK : SINGLE_RUN_COLOR_LIGHT;
 };
 
 // map tiles vendor, maptiler or mapbox or stadiamaps
