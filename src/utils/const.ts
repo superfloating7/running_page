@@ -168,6 +168,18 @@ export const CYCLING_COLOR = 'rgb(51,255,87)';
 export const HIKING_COLOR = 'rgb(151,51,255)';
 export const WALKING_COLOR = HIKING_COLOR;
 export const SWIMMING_COLOR = 'rgb(255,51,51)';
+export const INDOOR_COLOR = 'rgb(255,200,100)';
+
+export const getRuntimeRunColor = (type: string): string => {
+  switch (type) {
+    case 'cycling': return CYCLING_COLOR;
+    case 'hiking': return HIKING_COLOR;
+    case 'walking': return WALKING_COLOR;
+    case 'swimming': return SWIMMING_COLOR;
+    case 'indoor': return INDOOR_COLOR;
+    default: return MAIN_COLOR;
+  }
+};
 
 // map tiles vendor, maptiler or mapbox or stadiamaps
 // if you want to use maptiler, set the access token in MAP_TILE_ACCESS_TOKEN
@@ -210,3 +222,15 @@ export const MAP_TILE_STYLES = {
   },
   default: 'mapbox://styles/mapbox/dark-v10',
 };
+
+export const getMapTileVendorStyles = (vendor: string) => {
+  return MAP_TILE_STYLES[vendor as keyof typeof MAP_TILE_STYLES] as Record<string, string> | undefined;
+};
+
+export const MAP_TILE_STYLE_DARK = MAP_TILE_STYLE;
+export const MAP_TILE_STYLE_LIGHT = MAP_TILE_STYLE;
+
+export const HOME_PAGE_TITLE = IS_CHINESE ? '我的跑步主页' : 'Running Page';
+export const LOADING_TEXT = IS_CHINESE ? '加载中...' : 'Loading...';
+export const NO_ROUTE_DATA = IS_CHINESE ? '暂无路线数据' : 'No route data';
+export const INVALID_ROUTE_DATA = IS_CHINESE ? '路线数据无效' : 'Invalid route data';

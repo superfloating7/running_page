@@ -5,8 +5,8 @@ import Map, {
   FullscreenControl,
   NavigationControl,
   MapRef,
-} from 'react-map-gl';
-import { MapInstance } from 'react-map-gl/src/types/lib';
+} from 'react-map-gl/maplibre';
+import type { MapInstance } from 'react-map-gl/maplibre';
 import useActivities from '@/hooks/useActivities';
 import {
   IS_CHINESE,
@@ -26,10 +26,12 @@ import {
 import {
   Coordinate,
   IViewState,
+} from '@/utils/utils';
+import {
   geoJsonForMap,
   getMapStyle,
   isTouchDevice,
-} from '@/utils/utils';
+} from '@/utils/geoUtils';
 import RunMarker from './RunMarker';
 import RunMapButtons from './RunMapButtons';
 import styles from './style.module.css';
