@@ -2,7 +2,7 @@ import { lazy, Suspense } from 'react';
 import Stat from '@/components/Stat';
 import useActivities from '@/hooks/useActivities';
 import type { Activity } from '@/utils/utils';
-import { formatPace } from '@/utils/utils';
+import { formatPace, isRunningActivity } from '@/utils/utils';
 import useHover from '@/hooks/useHover';
 import { yearStats, githubYearStats } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
@@ -60,18 +60,21 @@ const addRunToAccumulator = (
   run: Activity
 ) => {
   accumulator.runCount += 1;
-  accumulator.totalDistance += run.distance || 0;
-  accumulator.totalElevationGain += run.elevation_gain || 0;
 
-  if (run.average_speed) {
-    accumulator.totalMetersForPace += run.distance || 0;
-    accumulator.totalSecondsForPace += (run.distance || 0) / run.average_speed;
-  }
+  if (isRunningActivity(run)) {
+    accumulator.totalDistance += run.distance || 0;
+    accumulator.totalElevationGain += run.elevation_gain || 0;
 
-  if (run.average_heartrate) {
-    accumulator.averageHeartRateTotal += run.average_heartrate;
-  } else {
-    accumulator.heartRateNullCount += 1;
+    if (run.average_speed) {
+      accumulator.totalMetersForPace += run.distance || 0;
+      accumulator.totalSecondsForPace += (run.distance || 0) / run.average_speed;
+    }
+
+    if (run.average_heartrate) {
+      accumulator.averageHeartRateTotal += run.average_heartrate;
+    } else {
+      accumulator.heartRateNullCount += 1;
+    }
   }
 
   if (run.streak) {

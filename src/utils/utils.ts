@@ -260,6 +260,10 @@ const titleForRun = (run: Activity): string => {
   return RUN_TITLES.NIGHT_RUN_TITLE;
 };
 
+const RUNNING_TYPES = new Set(['Run', 'track_running', 'trail_running', 'treadmill_running']);
+
+const isRunningActivity = (run: Activity) => RUNNING_TYPES.has(run.type);
+
 const filterYearRuns = (run: Activity, year: string) => {
   if (run && run.start_date_local) {
     return run.start_date_local.slice(0, 4) === year;
@@ -312,4 +316,5 @@ export {
   sortDateFuncReverse,
   formatRunTime,
   convertMovingTime2Sec,
+  isRunningActivity,
 };

@@ -357,7 +357,8 @@ async def download_new_activities(
     # because I don't find a para for after time, so I use garmin-id as filename
     # to find new run to generate
     activity_ids = await get_activity_id_list(client)
-    to_generate_garmin_ids = list(set(activity_ids) - set(downloaded_ids))
+    exclude_ids = set(os.environ.get("EXCLUDE_ACTIVITY_IDS", "").split(",")) - {""}
+    to_generate_garmin_ids = list(set(activity_ids) - set(downloaded_ids) - exclude_ids)
     print(f"{len(to_generate_garmin_ids)} new activities to be downloaded")
 
     to_generate_garmin_id2title = {}
