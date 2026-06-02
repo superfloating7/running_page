@@ -62,8 +62,7 @@ class Garmin:
             garth.configure(domain="garmin.cn", ssl_verify=False)
         self.modern_url = self.URL_DICT.get("MODERN_URL")
         garth.client.loads(secret_string)
-        if garth.client.oauth2_token.expired:
-            garth.client.refresh_oauth2()
+        garth.client.refresh_oauth2()
 
         self.headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36",
