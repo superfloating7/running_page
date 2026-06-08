@@ -53,6 +53,8 @@ class GridDrawer(TracksDrawer):
             )
 
     def _draw_track(self, dr: svgwrite.Drawing, tr: Track, size: XY, offset: XY):
+        if getattr(tr, "subtype", None) == "indoor":
+            return
         color = self.color(self.poster.length_range, tr.length, tr.special)
 
         str_length = format_float(self.poster.m2u(tr.length))
