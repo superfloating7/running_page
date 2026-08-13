@@ -1,0 +1,22 @@
+<gpx xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3" creator="Garmin Connect" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd">
+  <extensions>
+<distance>179.47</distance>
+<average_hr>136.0</average_hr>
+<average_speed>0.05000000074505806</average_speed>
+<start_time>2026-08-12T23:04:04+00:00</start_time>
+<end_time>2026-08-13T00:03:21.690000+00:00</end_time>
+<moving_time>139.0</moving_time>
+<elapsed_time>3557.69</elapsed_time>
+</extensions>
+<metadata>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2026-08-12T23:04:04.000Z</time>
+  </metadata>
+  <trk>
+    <name>Tennis</name>
+    <type>tennis_v2</type>
+    <trkseg/>
+  </trk>
+</gpx>
